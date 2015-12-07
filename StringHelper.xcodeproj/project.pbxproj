@@ -10,6 +10,8 @@
 		EFA8193D1C15E37400382443 /* StringHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = EFA8193C1C15E37400382443 /* StringHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EFA819441C15E37400382443 /* StringHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFA819391C15E37400382443 /* StringHelper.framework */; settings = {ASSET_TAGS = (); }; };
 		EFA819491C15E37400382443 /* StringHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA819481C15E37400382443 /* StringHelperTests.swift */; };
+		EFA819541C15E3AF00382443 /* String+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA819531C15E3AF00382443 /* String+Helper.swift */; settings = {ASSET_TAGS = (); }; };
+		EFA819561C15E58C00382443 /* String+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA819531C15E3AF00382443 /* String+Helper.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,7 @@
 		EFA819431C15E37400382443 /* StringHelperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StringHelperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFA819481C15E37400382443 /* StringHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringHelperTests.swift; sourceTree = "<group>"; };
 		EFA8194A1C15E37400382443 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EFA819531C15E3AF00382443 /* String+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Helper.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +76,7 @@
 			children = (
 				EFA8193C1C15E37400382443 /* StringHelper.h */,
 				EFA8193E1C15E37400382443 /* Info.plist */,
+				EFA819531C15E3AF00382443 /* String+Helper.swift */,
 			);
 			path = StringHelper;
 			sourceTree = "<group>";
@@ -142,6 +146,7 @@
 		EFA819301C15E37400382443 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "___zhuohongwei___";
 				TargetAttributes = {
@@ -193,6 +198,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFA819541C15E3AF00382443 /* String+Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,6 +206,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFA819561C15E58C00382443 /* String+Helper.swift in Sources */,
 				EFA819491C15E37400382443 /* StringHelperTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -307,6 +314,7 @@
 		EFA8194E1C15E37400382443 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -317,12 +325,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.zhuohongwei.StringHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		EFA8194F1C15E37400382443 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
