@@ -182,23 +182,4 @@ extension String {
         return htmlString as String
     }
     
-    /* Returns the contents of a file resource in the main bundle or nil if not found */
-    func fileContents() -> String? {
-        
-        let filenameAndExtension = self as NSString
-        let (name, ext) = (filenameAndExtension.stringByDeletingPathExtension, filenameAndExtension.pathExtension)
-        
-        guard let urlString = NSBundle.mainBundle().pathForResource(name, ofType: ext) else {
-            return nil
-        }
-        
-        do {
-            return (try NSString(contentsOfFile: urlString, encoding:NSUTF8StringEncoding)) as String
-            
-        } catch {
-            return nil
-        }
-        
-    }
-    
 }
