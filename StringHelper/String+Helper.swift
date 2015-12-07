@@ -83,7 +83,6 @@ extension String {
         
         if let value = Lookup.Codes[entity] {
             let replacement = Character(UnicodeScalar(value))
-            print(replacement)
             decoded = decoded.stringByReplacingCharactersInRange(range, withString: "\(replacement)")
             
         } else if entity.hasPrefix("&#x") {
