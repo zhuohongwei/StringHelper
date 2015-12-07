@@ -18,7 +18,7 @@ extension String {
             }()
     }
     
-    /* Removes HTML character entities from string */
+    /* Decodes HTML character entities in string */
     func decodeHTMLCharacterEntities() -> String {
     
         guard !self.isEmpty else {
