@@ -19,6 +19,17 @@ class StringHelperTests: XCTestCase {
         super.tearDown()
     }
     
+    func testStringByStrippingHTML() {
+        XCTAssertEqual("<br".stringByStrippingHTML(), "<br")
+        XCTAssertEqual("<br>".stringByStrippingHTML(), "")
+        XCTAssertEqual("<br/>".stringByStrippingHTML(), "")
+        XCTAssertEqual("<html><strong>lorep</strong> ipsum</html>".stringByStrippingHTML(), "lorep ipsum")
+        XCTAssertEqual("br>".stringByStrippingHTML(), "br>")
+        XCTAssertEqual("".stringByStrippingHTML(), "")
+        XCTAssertEqual("<html><stronglorep</strong> ipsum</html>".stringByStrippingHTML(), "<stronglorep ipsum")
+        XCTAssertEqual("<html><strong>lorep</strong ipsum</html>".stringByStrippingHTML(), "lorep</strong ipsum")
+    }
+    
     func testDecodeHTMLCharacterEntities() {
         XCTAssertTrue("".decodeHTMLCharacterEntities() == "")
         XCTAssertTrue(";".decodeHTMLCharacterEntities() == ";")
