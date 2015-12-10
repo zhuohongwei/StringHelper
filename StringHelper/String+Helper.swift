@@ -164,21 +164,7 @@ extension String {
     
     /* Removes html tags from string */
     func stringByStrippingHTML() -> String {
-        
-        var htmlString = self as NSString
-        var r:NSRange!
-        
-        while true {
-            r = htmlString.rangeOfString("<[^>]+>", options: [.RegularExpressionSearch])
-            
-            if r.location == NSNotFound {
-                break
-            }
-            
-            htmlString = htmlString.stringByReplacingCharactersInRange(r, withString: "")
-        }
-        
-        return htmlString as String
+        return self.stringByReplacingOccurrencesOfString("<[^<>]+?>", withString: "", options: [.RegularExpressionSearch])
     }
     
 }
